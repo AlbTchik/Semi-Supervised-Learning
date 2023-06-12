@@ -198,21 +198,9 @@ images annotés sur 60 000 et 400 epochs. L'évolution de des accuracy et
 des pertes pendant l'entraînement sont présentés dans la figure
 ci-dessous.
 
+![FixMatch acc](https://github.com/AlbTchik/Semi-Supervised-Learning/assets/90097422/5f2f8b58-22fb-4c58-a1b4-55ee8505362a)</p>
 
-<figure>
-<p>    </p>
-<figure>
-<p>    ![FixMatch acc](https://github.com/AlbTchik/Semi-Supervised-Learning/assets/90097422/5f2f8b58-22fb-4c58-a1b4-55ee8505362a)</p>
-<p>    </p>
-<figcaption>Accuracy pendant l’entrainement</figcaption>
-</figure>
-<figure>
 ![fixmatch losses](https://github.com/AlbTchik/Semi-Supervised-Learning/assets/90097422/eee9027b-642f-40c7-8162-c48c4b22efc8)
-<p>    </p>
-<figcaption>Perte pendant l’entraînement</figcaption>
-</figure>
-<figcaption>Analyse de l’entrainement de FixMatch</figcaption>
-</figure>
 
 On voit que l'entraînement est un succès et qu'il mène à des résultats
 proche de l'état de l'art. La perte met du temps à descendre au début et
@@ -223,22 +211,9 @@ cosinus. Il a donc été retiré et l'entraînement a été ensuite relancé
 pour 200 epochs. La comparaison des résultats est présenté dans la
 figure ci-dessous.
 
+![acc comparaison](https://github.com/AlbTchik/Semi-Supervised-Learning/assets/90097422/75e71aba-9d20-44f7-a335-bbb50761da2e)</p>
 
-
-<figure>
-<p>    </p>
-<figure>
-<p>    ![acc comparaison](https://github.com/AlbTchik/Semi-Supervised-Learning/assets/90097422/75e71aba-9d20-44f7-a335-bbb50761da2e)</p>
-<p>    </p>
-<figcaption>Accuracy pendant l’entrainement</figcaption>
-</figure>
-<figure>
 ![loss comparaison](https://github.com/AlbTchik/Semi-Supervised-Learning/assets/90097422/ef0ed5b6-34e6-4c9a-ab05-2cc333d2155d)
-<p>    </p>
-<figcaption>Pertes pendant l’entraînement</figcaption>
-</figure>
-<figcaption>Comparaison des modèles FixMatch</figcaption>
-</figure>
 
 On voit que la réduction du taux d'apprentissage sous la forme d'un
 cosinus qui perd en amplitude est utile pour améliorer les performances
