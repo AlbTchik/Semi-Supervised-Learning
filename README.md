@@ -247,9 +247,6 @@ suivants :
 <td style="text-align: left;"><span
 class="math inline">99.82</span></td>
 <td style="text-align: left;"><span class="math inline">92.0</span></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">FixMatch sans Scheduler</td>
@@ -257,9 +254,6 @@ class="math inline">99.82</span></td>
 class="math inline">99.46</span></td>
 <td style="text-align: left;"><span
 class="math inline">88.51</span></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
 </tr>
 </tbody>
 </table>
