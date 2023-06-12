@@ -1,12 +1,4 @@
----
-author:
-- Alban Tchikladzé
-bibliography:
-- Bibliographie.bib
-date: Avril 2023
-title: "**CIFAR-10, l'apprentissage semi-supervisé et l'algorithme
-  FixMatch**"
----
+**CIFAR-10, l'apprentissage semi-supervisé et l'algorithme FixMatch**
 
 # L'ensemble de données CIFAR-10
 
@@ -16,7 +8,7 @@ Tiny Images qui contient 10 classes d'objets: avions, voitures, oiseaux,
 chats, cerfs, chiens, grenouilles, chevaux, navires et camions. Comme on
 peut le voir dans la figure ci-dessous.
 
-![Exemples d'images de CIFAR-10](Images/CIFAR-10.png)
+![CIFAR-10](https://github.com/AlbTchik/Semi-Supervised-Learning/assets/90097422/176ae30d-8072-442f-86fa-52d82826f605)
 
 Chaque classe contient 6 000 images en couleur de 32x32 pixels dans
 l'ensemble d'apprentissage et 1 000 images dans l'ensemble de test, pour
@@ -33,8 +25,8 @@ non étiquetés. Il dispose aussi de certaines données étiquetée pour
 aiguiller la recherche en fixant une représentation initial de chacune
 des classes.
 
-![Fonctionnement de l'apprentissage
-semi-supervisé](Images/supervised learning.png)
+
+![supervised learning](https://github.com/AlbTchik/Semi-Supervised-Learning/assets/90097422/c06a608f-8138-43b0-a336-d1170bb29134)
 
 L'avantage de cette technique d'apprentissage est que les données non
 étiquetées sont souvent moins coûteuses à obtenir et plus abondantes que
@@ -55,7 +47,7 @@ inférence sur K versions de la même image. Puis les prédictions des
 images annotés sont moyennées pour obtenir la prédiction finale, comme
 on peut le voir sur la figure ci-dessous.
 
-![Fonctionnement de l'algorithme MixMatch](Images/mixmatch.png)
+![mixmatch](https://github.com/AlbTchik/Semi-Supervised-Learning/assets/90097422/94f512d4-5450-4ec8-916d-c8ecb328a907)
 
 Le modèle est mis à jour en utilisant une régularisation qui combine une
 entropie croisée pour les exemples supervisés et une entropie croisée
@@ -97,7 +89,7 @@ L'avantage principal de FixMatch est de contraindre le modèle à prédire
 les mêmes classes pour chacune des variations d'une image non étiquetée,
 comme on peut le voir dans la figure ci-dessous.
 
-![Régularisation par cohérence](Images/coherence loss.png)
+![coherence loss](https://github.com/AlbTchik/Semi-Supervised-Learning/assets/90097422/6169d026-6655-4df1-81dd-2bb74e3eda5b)
 
 Pour cela, on défini une pseudo-étiquette. Celle-ci représente la
 prédiction de l'image la moins augmentée et sert de référence.
@@ -157,7 +149,7 @@ final.
 Le bloc résiduel du Wide ResNet possède l'architecture indiqué dans la
 partie (d) de la figure ci-dessous.
 
-![Les différents bloc residuels](Images/wide resnet.png)
+![wide resnet](https://github.com/AlbTchik/Semi-Supervised-Learning/assets/90097422/d2a462b6-59a1-4ddf-b06f-91c934345cdb)
 
 On voit que la connection résiduelle est beaucoup plus large que pour un
 ResNet classique (partie (a) et (b) de la figure). En élargissant la
@@ -206,15 +198,16 @@ images annotés sur 60 000 et 400 epochs. L'évolution de des accuracy et
 des pertes pendant l'entraînement sont présentés dans la figure
 ci-dessous.
 
+
 <figure>
 <p>    </p>
 <figure>
-<p>     <img src="Images/FixMatch acc.png" alt="image" /></p>
+<p>    ![FixMatch acc](https://github.com/AlbTchik/Semi-Supervised-Learning/assets/90097422/5f2f8b58-22fb-4c58-a1b4-55ee8505362a)</p>
 <p>    </p>
 <figcaption>Accuracy pendant l’entrainement</figcaption>
 </figure>
 <figure>
-<img src="Images/fixmatch losses.png" />
+![fixmatch losses](https://github.com/AlbTchik/Semi-Supervised-Learning/assets/90097422/eee9027b-642f-40c7-8162-c48c4b22efc8)
 <p>    </p>
 <figcaption>Perte pendant l’entraînement</figcaption>
 </figure>
@@ -230,15 +223,17 @@ cosinus. Il a donc été retiré et l'entraînement a été ensuite relancé
 pour 200 epochs. La comparaison des résultats est présenté dans la
 figure ci-dessous.
 
+
+
 <figure>
 <p>    </p>
 <figure>
-<p>     <img src="Images/acc comparaison.png" alt="image" /></p>
+<p>    ![acc comparaison](https://github.com/AlbTchik/Semi-Supervised-Learning/assets/90097422/75e71aba-9d20-44f7-a335-bbb50761da2e)</p>
 <p>    </p>
 <figcaption>Accuracy pendant l’entrainement</figcaption>
 </figure>
 <figure>
-<img src="Images/loss comparaison.png" />
+![loss comparaison](https://github.com/AlbTchik/Semi-Supervised-Learning/assets/90097422/ef0ed5b6-34e6-4c9a-ab05-2cc333d2155d)
 <p>    </p>
 <figcaption>Pertes pendant l’entraînement</figcaption>
 </figure>
