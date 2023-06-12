@@ -1,6 +1,6 @@
-**CIFAR-10, l'apprentissage semi-supervisé et l'algorithme FixMatch**
+# CIFAR-10, l'apprentissage semi-supervisé et l'algorithme FixMatch
 
-# L'ensemble de données CIFAR-10
+## L'ensemble de données CIFAR-10
 
 CIFAR-10 est un ensemble de données utilisé pour la reconnaissance
 d'objets. Il s'agit d'un sous-ensemble étiqueté de l'ensemble de données
@@ -16,7 +16,7 @@ un total de 60 000 images. Dans l'algorithme d'apprentissage
 semi-supervisé seule une portion des étiquettes sera fournis à
 l'algorithme.
 
-# L'apprentissage semi-supervisé
+## L'apprentissage semi-supervisé
 
 L'apprentissage semi-supervisé utilise une combinaison de données
 étiquetées et non étiquetées pour entraîner un modèle prédictif.
@@ -34,7 +34,7 @@ les données étiquetées. Cependant, toute la difficulté de
 l'apprentissage semi-supervisé réside dans la façon d'utiliser au mieux
 les données non étiquetés pour l'apprentissage.
 
-## L'algorithme MixMatch
+### L'algorithme MixMatch
 
 En 2019, Berthelot et al. [@berthelot2019mixmatch] proposent \"MixMatch:
 A Holistic Approach to Semi-Supervised Learning\". Cette technique a
@@ -61,14 +61,14 @@ ce réseau permet de mieux identifier les parties importantes des données
 non étiquetées et de les utiliser de manière plus efficace pour
 améliorer la performance du modèle.
 
-# L'algorithme FixMatch
+## L'algorithme FixMatch
 
 En 2020, Sohn et al. [@sohn2020fixmatch] publient l'article \"Fixmatch:
 Simplifying semi-supervised learning with consistency and confidence\"
 qui propose une nouvelle méthode d'apprentissage semi-supervisé
 similaire à MixMatch.
 
-## Augmentation des données
+### Augmentation des données
 
 Cet algorithme utilise aussi une augmentation aléatoire des images non
 étiquetées, similaire à MixMatch. Cependant, FixMatch exploite deux
@@ -83,7 +83,7 @@ d'augmentation adaptée avec des transformations d'images basiques.
 Certaines variations de l'image sont donc fortement augmentés tandis que
 d'autres sont très proches de l'image originale.
 
-## Régularisation par cohérence
+### Régularisation par cohérence
 
 L'avantage principal de FixMatch est de contraindre le modèle à prédire
 les mêmes classes pour chacune des variations d'une image non étiquetée,
@@ -116,7 +116,7 @@ la même manière que MixMatch. La perte totale du modèle est donc :
 $$L_{FixMatch} = L_{u} +\lambda_{u} L_{s}$$ Avec $\lambda_{u}$ un
 scalaire représentant l'importance de la perte non supervisée.
 
-## Le modèle Wide ResNet
+### Le modèle Wide ResNet
 
 FixMatch fait intervenir un classifieur qui sert de base à
 l'entraînement. Le modèle Wide ResNet de Zagoruyko et
@@ -128,7 +128,7 @@ profondeur inégalée à l'époque. Celles-ci permettent aux réseau
 d'apprendre au mieux les transformations en comparant le résultat d'une
 opération avec l'entrée originelle.
 
-### Les problèmes du ResNet
+#### Les problèmes du ResNet
 
 Bengio and al.[@bengio2007scaling] montrent que les circuits peu
 profonds peuvent nécessiter exponentiellement plus de composants que les
@@ -144,7 +144,7 @@ apprennent des représentations utiles ou de nombreux blocs partagent
 très peu d'informations et ne contribuent que faiblement à l'objectif
 final.
 
-### l'avantage du Wide ResNet
+#### l'avantage du Wide ResNet
 
 Le bloc résiduel du Wide ResNet possède l'architecture indiqué dans la
 partie (d) de la figure ci-dessous.
@@ -163,9 +163,9 @@ profondeur extrême. Un réseau moins profond signifie donc un nombre de
 couches réduit et un temps d'entraînement plus court, pour une
 performance équivalente.
 
-# Mise en pratique de FixMatch
+## Mise en pratique de FixMatch
 
-## Implémentation de l'algorithme
+### Implémentation de l'algorithme
 
 Le choix a été fait de ne pas réimplementer FixMatch depuis le début.
 Ainsi, le répertoire de
@@ -182,7 +182,7 @@ contrôlé la taille du pas en fonction des paramètres. Aussi, le taux
 d'apprentissage suit une évolution sous la forme d'un cosinus qui perd
 en amplitude au fur à mesure des epochs.
 
-## Entraînement du modèle
+### Entraînement du modèle
 
 Malheureusement, du fait du long entraînement de l'algorithme (1
 journée), de la puissance de calcul limitée, des considérations
@@ -264,3 +264,139 @@ l'expérience. Il aurait aussi été possible d'analyser d'autres éléments
 utilisés par cette implémentation de FixMatch, comme un changement de
 réseau, de méthode d'augmentation, etc\... On aurait pu aussi comparer
 les résultats de FixMatch avec ceux de MixMatch ou ReMixMatch.
+
+
+---
+nocite: "[@*]"
+references:
+- author:
+  - family: Berthelot
+    given: David
+  - family: Carlini
+    given: Nicholas
+  - family: Goodfellow
+    given: Ian
+  - family: Papernot
+    given: Nicolas
+  - family: Oliver
+    given: Avital
+  - family: Raffel
+    given: Colin A
+  container-title: Advances in neural information processing systems
+  id: berthelot2019mixmatch
+  issued: 2019
+  title: "Mixmatch: A holistic approach to semi-supervised learning"
+  title-short: Mixmatch
+  type: article-journal
+  volume: 32
+- author:
+  - family: Berthelot
+    given: David
+  - family: Carlini
+    given: Nicholas
+  - family: Cubuk
+    given: Ekin D
+  - family: Kurakin
+    given: Alex
+  - family: Sohn
+    given: Kihyuk
+  - family: Zhang
+    given: Han
+  - family: Raffel
+    given: Colin
+  container-title: "arXiv preprint arXiv:1911.09785"
+  id: berthelot2019remixmatch
+  issued: 2019
+  title: "Remixmatch: Semi-supervised learning with distribution
+    alignment and augmentation anchoring"
+  title-short: Remixmatch
+  type: article-journal
+- author:
+  - family: Sohn
+    given: Kihyuk
+  - family: Berthelot
+    given: David
+  - family: Carlini
+    given: Nicholas
+  - family: Zhang
+    given: Zizhao
+  - family: Zhang
+    given: Han
+  - family: Raffel
+    given: Colin A
+  - family: Cubuk
+    given: Ekin Dogus
+  - family: Kurakin
+    given: Alexey
+  - family: Li
+    given: Chun-Liang
+  container-title: Advances in neural information processing systems
+  id: sohn2020fixmatch
+  issued: 2020
+  page: 596-608
+  title: "Fixmatch: Simplifying semi-supervised learning with
+    consistency and confidence"
+  title-short: Fixmatch
+  type: article-journal
+  volume: 33
+- author:
+  - family: Bengio
+    given: Yoshua
+  - family: LeCun
+    given: Yann
+  - literal: others
+  container-title: Large-scale kernel machines
+  id: bengio2007scaling
+  issue: 5
+  issued: 2007
+  page: 1-41
+  title: Scaling learning algorithms towards AI
+  type: article-journal
+  volume: 34
+- author:
+  - family: He
+    given: Kaiming
+  - family: Zhang
+    given: Xiangyu
+  - family: Ren
+    given: Shaoqing
+  - family: Sun
+    given: Jian
+  container-title: Proceedings of the IEEE conference on computer vision
+    and pattern recognition
+  id: he2016deep
+  issued: 2016
+  page: 770-778
+  title: Deep residual learning for image recognition
+  type: paper-conference
+- author:
+  - family: Zagoruyko
+    given: Sergey
+  - family: Komodakis
+    given: Nikos
+  container-title: "arXiv preprint arXiv:1605.07146"
+  id: zagoruyko2016wide
+  issued: 2016
+  title: Wide residual networks
+  type: article-journal
+- author:
+  - family: Cubuk
+    given: Ekin D
+  - family: Zoph
+    given: Barret
+  - family: Shlens
+    given: Jonathon
+  - family: Le
+    given: Quoc V
+  container-title: Proceedings of the IEEE/CVF conference on computer
+    vision and pattern recognition workshops
+  id: cubuk2020randaugment
+  issued: 2020
+  page: 702-703
+  title: "Randaugment: Practical automated data augmentation with a
+    reduced search space"
+  title-short: Randaugment
+  type: paper-conference
+---
+
+
