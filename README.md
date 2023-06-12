@@ -236,9 +236,6 @@ suivants :
 <th style="text-align: left;">Modèles</th>
 <th style="text-align: left;">Top-5 Accuracy</th>
 <th style="text-align: left;">Top-1 Accuracy</th>
-<th style="text-align: left;"></th>
-<th style="text-align: left;"></th>
-<th style="text-align: left;"></th>
 </tr>
 </thead>
 <tbody>
