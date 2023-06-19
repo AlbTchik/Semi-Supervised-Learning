@@ -99,6 +99,7 @@ régularisation par cohérence, qui est intégrée dans la perte non
 supervisée, présentée dans la formule ci-dessous :
 
 $$L_{u} = \frac{1}{\mu B}\sum ^{\mu B} _{b=1} {(max(q_{b}) \geq \tau)} H( \hat{q}_{b} , p_{m}(y | A(u_{b})))$$
+
 Avec $H( )$ l'entropie croisée, $q_{b} = p_{m}(y|\alpha(u_{b}))$ la
 probabilité des classes, $\hat{q}_{b} = arg max(q_{b})$ la
 pseudo-étiquette et $\tau$ le seuil permettant de choisir la
