@@ -109,7 +109,7 @@ Cette formule permet de tirer pleinement partie des perturbations
 aléatoire pour améliorer la généralisation du modèle. La formule de la
 perte supervisée est :
 
-![equation](https://latex.codecogs.com/png.latex?L_s%20%3D%20%5Cfrac%7B1%7D%7BB%7D%20%5Csum%20%5E%7BB%7D%20_%7Bb%3D1%7D%20%7BH%28p_b%2C%20p_m%20%28y%20%7C%20%5Calpha%28x_b%29%29%29%7D)
+![equation](https://latex.codecogs.com/svg.latex?L_s%20%3D%20%5Cfrac%7B1%7D%7BB%7D%20%5Csum%20%5E%7BB%7D%20_%7Bb%3D1%7D%20%7BH%28p_b%2C%20p_m%20%28y%20%7C%20%5Calpha%28x_b%29%29%29%7D)
 
 Finalement, à la sortie du réseau, la fonction de perte de FixMatch est
 calculé en combinant une perte non supervisé et une perte supervisée, de
