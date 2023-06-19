@@ -98,7 +98,8 @@ classe de la pseudo-étiquette. Ce principe est mis en place via la
 régularisation par cohérence, qui est intégrée dans la perte non
 supervisée, présentée dans la formule ci-dessous :
 
-$$L_{u} = \frac{1}{\mu B}\sum ^{\mu B} _{b=1} {(max(q_{b}) \geq \tau)} H( \hat{q}_{b} , p_{m}(y | A(u_{b})))$$
+![equation](https://latex.codecogs.com/png.latex?L_u%20%3D%20%5Cfrac%7B1%7D%7B%5Cmu%20B%7D%5Csum%20%5E%7B%5Cmu%20B%7D%20_%7Bb%3D1%7D%20%7B%28%5Cmax%28q_b%29%20%5Cgeq%20%5Ctau%29%7D%20H%28%5Chat%7Bq%7D_b%2C%20p_m%28y%20%7C%20A%28u_b%29%29%29%29)
+
 
 Avec $H( )$ l'entropie croisée, $q_{b} = p_{m}(y|\alpha(u_{b}))$ la
 probabilité des classes, $\hat{q}_{b} = arg max(q_{b})$ la
@@ -108,7 +109,8 @@ Cette formule permet de tirer pleinement partie des perturbations
 aléatoire pour améliorer la généralisation du modèle. La formule de la
 perte supervisée est :
 
-$$L_{s} = \frac{1}{B} \sum ^{B} _{b=1} {H( p_{b}, p_{m} ( y | \alpha(x_{b})))}$$
+![equation](https://latex.codecogs.com/png.latex?L_s%20%3D%20%5Cfrac%7B1%7D%7BB%7D%20%5Csum%20%5E%7BB%7D%20_%7Bb%3D1%7D%20%7BH%28p_b%2C%20p_m%20%28y%20%7C%20%5Calpha%28x_b%29%29%29%7D)
+
 
 Finalement, à la sortie du réseau, la fonction de perte de FixMatch est
 calculé en combinant une perte non supervisé et une perte supervisée, de
